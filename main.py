@@ -120,6 +120,12 @@ def Graph_1():
     df = QueryToDataframe(query=query )
     PrintDataframeStreamlit(df = df)
 
+    st.write(''' **Graph interaction**
+    1. You can interact with the graph by clicking on each lines in the legend on the right  
+    2. **Double** click on the line in the legend to seperate it
+    ''')
+
+
     # Now draw the graph
     plot = px.line( data_frame=df, x = "checking_hour", y = "available_percent", 
                 color = "room", 
@@ -127,13 +133,14 @@ def Graph_1():
                 title= "The percentage of availability of each room throughout the day")
     st.plotly_chart(plot, use_container_width=True)
 
-
-    st.write(''' **Some notes**
-    1. You can interact with the graph by clicking on each lines in the legend on the right  
-    2. **Double** click on the line in the legend to seperate it
-    3. The *checking_hour* is the time of day you check the library schedule   
-    4. The *available_percent* is the percent of availability of a certain room 
+    st.write("##### Graph explanation:")
+    st.write('''
+        - x axis (checking_hour): This is when I scrap the website (when it 6 means I scrap at 6am in the morning, for example).
+        It means that if you check the page manually at that time, you would get similar result
+        - y axis (available_percent) 
+    
     ''')
+
 
 
 
