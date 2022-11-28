@@ -16,7 +16,7 @@ import mysql.connector
 import datetime as datetime
 
 # Some CONSTANT
-DEFAULT_START_TIME = datetime.date(2022, 11,27)
+DEFAULT_START_TIME = datetime.date(2022, 11,28)
 DEFAULT_END_TIME = datetime.date(2022,11,1)
 
 
@@ -261,9 +261,12 @@ def main():
 
     # Now get the whole database, just to see, lol
     st.write("##### The original dataset")
-    st.write("This is a part of the dataset in database")
+    st.write("This is the first 1000 lines of the dataset in database")
     query_full_table = '''
-        SELECT * FROM library_schedule LIMIT 1000;
+        SELECT  checking_date, checking_time,  
+                room_hour, day_of_week, 
+                room, status
+        FROM library_schedule LIMIT 1000;
     '''
     df = QueryToDataframe(query=query_full_table,columns_to_convert=['checking_time', 'room_hour'])
 
