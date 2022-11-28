@@ -16,7 +16,7 @@ import mysql.connector
 import datetime as datetime
 
 # Some CONSTANT
-DEFAULT_START_TIME = datetime.date(2022, 10,31)
+DEFAULT_START_TIME = datetime.date(2022, 11,27)
 DEFAULT_END_TIME = datetime.date(2022,11,1)
 
 
@@ -255,13 +255,15 @@ def Graph_3():
 
 
 def main():
+    # Instruction to my app
     st.title("WELCOME TO MY APP")
-
+    
 
     # Now get the whole database, just to see, lol
     st.write("##### The original dataset")
+    st.write("This is a part of the dataset in database")
     query_full_table = '''
-        SELECT * FROM library_schedule;
+        SELECT * FROM library_schedule LIMIT 1000;
     '''
     df = QueryToDataframe(query=query_full_table,columns_to_convert=['checking_time', 'room_hour'])
 
