@@ -17,6 +17,7 @@ To keep the data up-to-date, I follow steps below:
 - The script then store data to AWS RDS (MySQL Database)
 - I deploy my app to Streamlit and connect it to my database. The data would then be fetch everytime you reload the webite.
 
-
+## Future improvement:
+- **Adding machine learning prediction**: I plan to use the data I collect to build a machine learning model that is resilient to change and can update. But at the moment, I can't run machine learning models on Streamlit and the most feasible solution is using AWS sagemaker to train and make prediction. 
 
 
