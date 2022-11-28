@@ -17,7 +17,7 @@ import datetime as datetime
 
 # Some CONSTANT
 DEFAULT_START_TIME = datetime.date(2022, 11,28)
-DEFAULT_END_TIME = datetime.date(2022,11,1)
+DEFAULT_END_TIME = datetime.date(2022,12,1)
 
 
 # Connect to database
