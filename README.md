@@ -10,7 +10,7 @@ This is the part 2 of my old USF Library Project, you can find it here: https://
 - *Interactive*: I used plotly to create graphs, so you can easily pan, zoom in and out, seperate certain data columns.
 - *Up to date*: this personal project is constantly updated, I will further explain below.
 
-## Live data collection pipeline:
+## Live data collection:
 To keep the data up-to-date, I follow steps below:
 
 - I wrote a script to scrap data from: https://calendar.lib.usf.edu/spaces and upload to script to AWS Lambda to run it on cloud, with AWS Amazon EventBridge to run it on a fixed shedule (depend on the day, but on weekday I run it every hour from 5am to 6pm)
