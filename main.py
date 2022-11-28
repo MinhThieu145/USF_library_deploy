@@ -22,11 +22,11 @@ DEFAULT_END_TIME = datetime.date(2022,11,1)
 
 # Connect to database
 db = mysql.connector.connect(
-    host = "library-database.chuimlqlnedu.us-east-1.rds.amazonaws.com",
+    host = st.secrets['HOST']
     port = 3306,
-    user='admin',
-    passwd = 'Thealchemist135',
-    database = 'library_database_2'
+    user= st.secrets['USER'],
+    passwd = st.secrets['PASSWORD'],
+    database = st.secrets['DATABASE']
 
 )
 
