@@ -186,7 +186,7 @@ def Graph_2():
     df = QueryToDataframe(query=query )
     PrintDataframeStreamlit(df = df)
 
-    plot = px.line( data_frame=df, x = "checking_date", y = "available_percent", 
+    plot = px.line( data_frame=df, x = "checking_hour", y = "available_percent", 
                 color = "checking_hour", 
                 symbol='checking_hour',
                 animation_group='checking_hour',
