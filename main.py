@@ -26,7 +26,7 @@ db = mysql.connector.connect(
     port = 3306,
     user='admin',
     passwd = 'Thealchemist135',
-    database = 'library_database'
+    database = 'library_database_2'
 
 )
 
