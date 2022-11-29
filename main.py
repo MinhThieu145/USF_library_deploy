@@ -133,15 +133,6 @@ def Graph_1():
                 title= "The percentage of availability of each room throughout the day")
     st.plotly_chart(plot, use_container_width=True)
 
-    st.write("##### Graph explanation:")
-    st.write('''
-        - x axis (checking_hour): This is when I scrap the website (when it 6 means I scrap at 6am in the morning, for example).
-        It means that if you check the page manually at that time, you would get similar result
-        - y axis (available_percent) 
-    
-    ''')
-
-
 
 
 def Graph_2():
@@ -279,6 +270,14 @@ def main():
 
     # Now print that shit to streamlit
     PrintDataframeStreamlit(df=df)
+
+    # Now explain the table
+    st.write("#### Columns explanation:")
+    st.write("*checking_date*: the library schedule of that day")
+    st.write("*checking_time*:the time I scrap the webiste (hourly)")
+    st.write("*room_hour*: the library schedule at that time (schedule is distrubuted as 15 min blocks) ")
+    st.write("*room*: room number")
+    st.write("*status*: the status of the library room at a specific time and a scecific day, can be available and unavailable")
 
     # Graph 1 - Avaialability của từng phòng vào từng h khác nhau
     # Chia database theo ngày (tức là cho người ta select ngày nào á)
