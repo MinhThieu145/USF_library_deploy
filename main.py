@@ -278,7 +278,7 @@ def Graph_3():
 
 def main():
     # Instruction to my app
-    st.title("WELCOME TO MY APP")
+    st.title("USF Library Deployment")
     
 
     # Now get the whole database, just to see, lol
