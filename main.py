@@ -284,7 +284,7 @@ def main():
                 room_hour, day_of_week, 
                 room, status
         FROM library_schedule 
-        ORDER checking_date DESC
+        ORDER BY checking_date DESC
         LIMIT 1000;
     '''
     df = QueryToDataframe(query=query_full_table,columns_to_convert=['checking_time', 'room_hour'])
