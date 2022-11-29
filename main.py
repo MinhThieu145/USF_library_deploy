@@ -202,8 +202,11 @@ def Graph_2():
 
     st.plotly_chart(plot)
     st.write("#### Graph explanation:")
-    st.markdown('''In this graph, I illustrate the available percentage of different rooms at different checking time.
+    st.markdown('''
+    In this graph, I illustrate the available percentage of different rooms at different checking time.
+
     So you can see the available percetage of one room at different hours throughtout a period of time.   
+
     For example, you can see the percentage of availability of room 257 go up and down from 28 Nov to 10 Dec (you can change the
     time period to whatever you like) 
     
@@ -268,7 +271,6 @@ def Graph_3():
     st.markdown('''
     In this graph, I calculate the average percentage of availability of different rooms in a day. So if room 257 has the 
     average rate of 15.7, that means on average (between different checking_hour) 15.75 percent of time the room is empty.
-
     ''')
 
 
