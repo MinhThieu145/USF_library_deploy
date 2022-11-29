@@ -133,7 +133,13 @@ def Graph_1():
                 title= "The percentage of availability of each room throughout the day")
     st.plotly_chart(plot, use_container_width=True)
 
-
+    st.write("#### Graph explanation:")
+    st.markdown('''The graph is based on the checking_hour(x axis) and available_percentage(y axis). 
+    Basically, I looked at the checking_hour of each room, and calculate the available percentage at that checking hour.      
+    For example, I look at checking_hour at 6 of room 257 and have the available percentage of 60%, that means at 6am, 60 percent
+    of room 257 is empty, this number can go up or down throught out the day (since I compare the available percentage to the unavailable at
+    that moment)
+     ''')
 
 def Graph_2():
     st.markdown('## 2. The availability of rooms in different hours ')
@@ -174,7 +180,6 @@ def Graph_2():
     WHERE checking_date BETWEEN "{start_date}" AND "{end_date}"
     GROUP BY checking_date, checking_hour,room
     ORDER by room
-
     ;
 
     
@@ -189,10 +194,18 @@ def Graph_2():
                 symbol='checking_hour',
                 animation_group='checking_hour',
                 animation_frame='room',
-                title= "The availability of room at different hours")
+                title= "The availability at different hours")
 
 
     st.plotly_chart(plot)
+    st.write("#### Graph explanation:")
+    st.markdown('''In this graph, I illustrate the available percentage of different rooms at different checking time.
+    So you can see the available percetage of one room at different hours throughtout a period of time.   
+    For example, you can see the percentage of availability of room 257 go up and down from 28 Nov to 10 Dec (you can change the
+    time period to whatever you like) 
+    
+    ''')
+
 
 
 def Graph_3():
@@ -248,7 +261,13 @@ def Graph_3():
                     )
     plot.update_traces(textangle=0,textposition="outside")
     st.plotly_chart(plot )
-    
+    st.write("#### Graph explanation:")
+    st.markdown('''
+    In this graph, I calculate the average percentage of availability of different rooms in a day. So if room 257 has the 
+    average rate of 15.7, that means on average (between different checking_hour) 15.75 percent of time the room is empty.
+
+    ''')
+
 
 
 
@@ -264,7 +283,9 @@ def main():
         SELECT  checking_date, checking_time,  
                 room_hour, day_of_week, 
                 room, status
-        FROM library_schedule LIMIT 1000;
+        FROM library_schedule 
+        ORDER checking_date DESC
+        LIMIT 1000;
     '''
     df = QueryToDataframe(query=query_full_table,columns_to_convert=['checking_time', 'room_hour'])
 
@@ -274,7 +295,7 @@ def main():
     # Now explain the table
     st.write("#### Columns explanation:")
     st.write("*checking_date*: the library schedule of that day")
-    st.write("*checking_time*:the time I scrap the webiste (hourly)")
+    st.write("*checking_time*: the time I scrap the webiste (hourly)")
     st.write("*room_hour*: the library schedule at that time (schedule is distrubuted as 15 min blocks) ")
     st.write("*room*: room number")
     st.write("*status*: the status of the library room at a specific time and a scecific day, can be available and unavailable")
