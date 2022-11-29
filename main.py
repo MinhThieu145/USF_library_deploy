@@ -134,7 +134,7 @@ def Graph_1():
     st.plotly_chart(plot, use_container_width=True)
 
     st.write("#### Graph explanation:")
-    st.markdown('''The graph is based on the checking_hour (x axis) and available_percentage (y axis). \     
+    st.markdown('''The graph is based on the checking_hour (x axis) and available_percentage (y axis). /     
     Basically, I looked at the checking_hour of each room, and calculate the available percentage at that checking hour.   \    
     For example, I look at checking_hour at 6 of room 257 and have the available percentage of 60%, that means at 6am, 60 percent
     of room 257 is empty, this number can go up or down throught out the day (since I compare the available percentage to the unavailable at
